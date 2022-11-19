@@ -1,0 +1,3 @@
+pytest
+trame
+vtk>=9.3
