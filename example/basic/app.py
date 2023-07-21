@@ -26,6 +26,7 @@ CHUNK_SIZE = 5000000
 # -----------------------------------------------------------------------------
 
 server = get_server()
+server.client_type = "vue2"
 state, ctrl = server.state, server.controller
 
 state.trame__title = "Progressive Geometry"
@@ -116,7 +117,7 @@ with SinglePageLayout(server) as layout:
                 v_if="rendering_mode === 'Local'",
                 ref="local",
             )
-            ctrl.view_update_local = l_view._ready
+            ctrl.view_update_local = l_view.update
             ctrl.view_reset_camera.add(l_view.reset_camera)
 
             # Progressive
